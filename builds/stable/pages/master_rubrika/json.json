@@ -185,11 +185,19 @@
             }]
         },
         "banner_side": {
-            "is-banner_side": true,
-            "is-url": false,
-            "src": "%=staticPrefix=%/img/assets/banner/manner_side.jpg",
-            "alt": "Выгодное предложение от газеты Презент",
-            "url": ""
+            "banners": [{
+                "is-banner_side": true,
+                "is-url": false,
+                "src": "%=staticPrefix=%/img/assets/banner/manner_side.jpg",
+                "alt": "Выгодное предложение от газеты Презент",
+                "url": ""
+            }, {
+                "is-banner_side": true,
+                "is-url": false,
+                "src": "%=staticPrefix=%/img/assets/banner/manner_side.jpg",
+                "alt": "Выгодное предложение от газеты Презент",
+                "url": ""
+            }]
         },
         "banner_top": {
             "is-banner_top": true,
