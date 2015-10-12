@@ -1,11 +1,17 @@
-{{#if is-banner_side}}
-<div block="manner" mod="side">
-    {{#if is-url}}
-    <a href="{{url}}">
-        <img src="{{src}}" alt="{{alt}}">
-    </a>
-    {{else}}
-    <img src="{{src}}" alt="{{alt}}">
-    {{/if}}
+<div block="manner-container" mix="block:js-manner-fix">
+    {{#each banners}}
+    <div elem="item">
+        {{#if is-banner_side}}
+        <div block="manner" mod="side">
+            {{#if is-url}}
+            <a href="{{url}}">
+                <img src="{{src}}" alt="{{alt}}">
+            </a>
+            {{else}}
+            <img src="{{src}}" alt="{{alt}}">
+            {{/if}}
+        </div>
+        {{/if}}
+    </div>
+    {{/each}}
 </div>
-{{/if}}

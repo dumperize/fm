@@ -1,7 +1,17 @@
+.manner-container {
+  &__item {
+    padding-bottom: 10px;
+  }
+  &_fix {
+    position: fixed;
+    top: 0;
+  }
+}
+
 .manner {
-    &_side {
-        @include to(lg) {
-            display: none;
-        }
+  &_side {
+    @include to(lg) {
+      display: none;
     }
+  }
 }
