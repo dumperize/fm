@@ -24,6 +24,8 @@ $(document).on('ready', function () {
         bannerTop = $('.inner-content__right-side').height() - banner.height();
 
     $(window).on('scroll', function () {
+        stopPoint = ($('.inner-content__right-side').offset().top + $('.inner-content__right-side').height()) - banner.height();
+        bannerTop = $('.inner-content__right-side').height() - banner.height();
         if ($('.inner-content__right-side').height() > $('.inner-content__left-side').height()) {
             bannerFix(container, topPos);
             bannerUnfix(container, stopPoint, bannerTop);
