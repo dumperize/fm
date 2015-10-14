@@ -1915,6 +1915,18 @@ $('.form__form').submit(function () {
          }*/
     });
 //});
+$('.js-open-sale').on('click', function () {
+    $.fancybox.open($(this).attr('href'), {
+        padding: 0,
+        maxWidth: 400,
+        helpers: {
+            overlay: {
+                locked: false
+            }
+        }
+    });
+    return false;
+});
 $('.js-rubrika-list').click(function () {
     $(this).parent().find('.rubrika-list__list').toggle();
 });
@@ -1935,17 +1947,10 @@ $('.js-rubrika-collapsed').click(function () {
         .end().find('.rubrika-list__icon').removeClass('rubrika-list__icon_rotate');
     }
 });
-$('.js-open-sale').on('click', function () {
-    $.fancybox.open($(this).attr('href'), {
-        padding: 0,
-        maxWidth: 400,
-        helpers: {
-            overlay: {
-                locked: false
-            }
-        }
-    });
-    return false;
+$(document).on('click', '.js-show-phone', function () {
+    $(this).hide().parent().find('.js-show-phone_details').show();
+    tellAboutUs($(this), '.master_photo-and-contacts__contact-wrap');
+    yandexGoal_showPhone($(this).attr('data-id'));
 });
 tellAboutUs = function (el, parent) {
     var tip = el.parents(parent).find('.js-tip');
@@ -1970,11 +1975,6 @@ $('.js-to-top').click(function () {
         scrollTop: 0
     }, 1000);
     return false;
-});
-$(document).on('click', '.js-show-phone', function () {
-    $(this).hide().parent().find('.js-show-phone_details').show();
-    tellAboutUs($(this), '.master_photo-and-contacts__contact-wrap');
-    yandexGoal_showPhone($(this).attr('data-id'));
 });
 $('#comment_form').submit(function () {
         sendForm($(this),
