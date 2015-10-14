@@ -31,6 +31,7 @@ if ($('.master_list').length > 0) {
                     } else {
                         $('.master_list__preloader').hide();
                     }
+                    bannerUpdatePos(stopPoint, bannerTop);
                 }
             });
         }

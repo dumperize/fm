@@ -15,17 +15,20 @@ function bannerUnfix(container, pos, bannerTop) {
         $('.' + container).removeAttr('style');
     }
 }
+function bannerUpdatePos(stopPoint, bannerTop) {
+    stopPoint = ($('.inner-content__right-side').offset().top + $('.inner-content__right-side').height()) - banner.height();
+    bannerTop = $('.inner-content__right-side').height() - banner.height();
+}
+
+var banner = $('.manner-container'),
+    stopPoint = ($('.inner-content__right-side').offset().top + $('.inner-content__right-side').height()) - banner.height(),
+    bannerTop = $('.inner-content__right-side').height() - banner.height();
 
 $(document).on('ready', function () {
     var container = 'manner-container',
-        topPos = $('.js-manner-fix').offset().top,
-        banner = $('.' + container),
-        stopPoint = ($('.inner-content__right-side').offset().top + $('.inner-content__right-side').height()) - banner.height(),
-        bannerTop = $('.inner-content__right-side').height() - banner.height();
+        topPos = $('.js-manner-fix').offset().top;
 
     $(window).on('scroll', function () {
-        stopPoint = ($('.inner-content__right-side').offset().top + $('.inner-content__right-side').height()) - banner.height();
-        bannerTop = $('.inner-content__right-side').height() - banner.height();
         if ($('.inner-content__right-side').height() > $('.inner-content__left-side').height()) {
             bannerFix(container, topPos);
             bannerUnfix(container, stopPoint, bannerTop);
